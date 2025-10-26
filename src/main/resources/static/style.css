@@ -1,0 +1,243 @@
+/* General Reset and Base Styles */
+:root {
+    /* Subtle & Professional Palette */
+    --primary-color: #008080; /* Muted Teal/Green for actions */
+    --text-color: #4a4a4a; /* Soft dark grey text */
+    --background-color: #f7f7f7; /* Very light background */
+    --card-background: #ffffff; /* Clean white card */
+    --border-color: #e3e3e3; /* Light, subtle borders */
+    --user-bubble: #e0f2f1; /* Very light teal for user messages */
+    --bot-bubble: #ffffff; /* White bot messages */
+    --success-color: #4CAF50; /* Standard success green */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* App Container - Clean, Subtle Card */
+.app-container {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 600px;
+    border: 1px solid var(--border-color);
+}
+
+/* --- Upload Section --- */
+.upload-container {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.upload-container h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#pdfFile {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #fcfcfc;
+    color: var(--text-color);
+}
+
+/* Progress Bar Container (New Element) */
+.progress-container {
+    width: 100%;
+    max-width: 350px;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: -5px; /* Adjust spacing */
+    display: none; /* Hidden by default */
+}
+
+#uploadProgressBar {
+    height: 100%;
+    width: 0%; /* Starts at 0 */
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Buttons */
+#uploadBtn, #sendBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#uploadBtn:hover, #sendBtn:hover {
+    background-color: #006666;
+    box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
+}
+
+#uploadMessage {
+    font-size: 0.9rem;
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* --- Chat Section --- */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.chat-window {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chat Messages */
+.chat-message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: var(--user-bubble);
+    color: var(--text-color);
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+    background-color: var(--bot-bubble);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 4px;
+}
+
+/* Chat Input Area */
+.chat-input-container {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#chatInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.1);
+}
+
+/* --- Loading Animation (Pulse Effect) --- */
+.typing-dots {
+    display: flex;
+    align-items: center;
+    height: 10px;
+}
+
+.typing-dots span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: scale(0.6);
+    animation: pulse 1.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 600px) {
+    .app-container {
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .upload-container {
+        align-items: stretch;
+    }
+
+    #uploadBtn {
+        width: 100%;
+    }
+}

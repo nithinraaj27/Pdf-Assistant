@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chat Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <div class="upload-container">
+        <h2>Upload PDF</h2>
+        <input type="file" id="pdfFile" accept="application/pdf" />
+        <button id="uploadBtn">Upload</button>
+        <div class="progress-container" id="progressContainer">
+            <div id="uploadProgressBar"></div>
+        </div>
+        <p id="uploadMessage"></p>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-window" id="chatWindow"></div>
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" placeholder="Ask me anything..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
