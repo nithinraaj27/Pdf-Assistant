@@ -114,26 +114,6 @@ Sets up LangChain4j components:
 
 ---
 
-### 🧰 `PdfProcessingService.java`
-
-Handles administrative PDF tasks:
-
-```java
-@Service
-public class PdfProcessingService {
-
-    // ... dependencies (WebClient, CqlSession)
-
-    public void clearPreviousPdfData() {
-        // Executes: TRUNCATE <keyspace>.<tableName>;
-        // Clears the vector table before new PDF ingestion
-        // ensuring only the current document is used for chat.
-    }
-}
-```
-
----
-
 ## 💡 UI Design Highlights
 
 - Inspired by **ChatGPT’s modern minimalism**  
