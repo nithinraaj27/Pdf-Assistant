@@ -143,28 +143,6 @@ public class PdfProcessingService {
 
 ---
 
-## 📦 Folder Structure
-
-```
-Pdf-Assistant/
-├── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-├── backend/
-│   ├── src/main/java/com/pdfassistant/
-│   │   ├── config/
-│   │   ├── controller/
-│   │   ├── service/
-│   │   └── model/
-│   └── resources/
-│       ├── application.properties
-│       └── static/
-└── README.md
-```
-
----
-
 ## 🧠 Future Enhancements
 
 - Support for **multiple PDFs** per session  
@@ -172,8 +150,3 @@ Pdf-Assistant/
 - **Dark mode** toggle in frontend  
 - Replace OpenAI with **local LLM (Ollama)** for offline usage  
 
----
-
-## 🧾 License
-
-This project is licensed under the **MIT License** — feel free to use and modify.
