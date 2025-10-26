@@ -11,8 +11,7 @@ It combines **Spring Boot**, **LangChain4j**, and **DataStax AstraDB** to delive
 - ⚙️ **Backend:** Spring Boot app orchestrating file uploads, embedding generation, and chat responses.  
 - 🧠 **RAG Pipeline:** Built using **LangChain4j** for document chunking, embedding, and context retrieval.  
 - 🗃️ **Vector Store:** Powered by **DataStax AstraDB** for efficient storage and retrieval of embeddings.  
-- 🤖 **LLM Integration:** Uses **OpenAI** (or a compatible model) for natural conversational responses.  
-- 🎨 **UX:** Smooth file upload progress bar and elegant loading animation (paper-flying style).  
+- 🤖 **LLM Integration:** Uses **OpenAI** (or a compatible model) for natural conversational responses.    
 
 ---
 
@@ -58,10 +57,6 @@ open index.html
 
 Configure the backend with your credentials in  
 `src/main/resources/application.properties`
-
-> ⚠️ **Security Warning:**  
-> Never commit real secrets or keys.  
-> Use environment variables or ensure `.gitignore` excludes sensitive files.
 
 ```properties
 # --- OPENAI CONFIGURATION ---
